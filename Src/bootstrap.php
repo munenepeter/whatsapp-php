@@ -5,7 +5,8 @@ require 'Core/Router.php';
 
 require 'controllers/PagesController.php';
 
-function view($filename){
+function view($filename, $data = []){
+    extract($data);
     return require "views/{$filename}.php";
 }
 

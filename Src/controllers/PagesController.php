@@ -10,13 +10,21 @@ class PagesController{
             return view('index');
         }
         # code...
-        return redirect('ChatList');
+        return redirect('chat');
     }
 
-    public function ChatList()
+    public function chat()
     {
         
-        return view('ChatList');
+        return view('chat', [
+            'name' => 'Abzed'
+        ]);
+    }
+
+    public function error()
+    {
+        
+        return view('error');
     }
 
 
