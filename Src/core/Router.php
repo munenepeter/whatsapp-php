@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Core;
+
+class Router{
+    public $routes = [
+
+        'GET' => [],
+        'POST' => []
+    ];
+
+    public static function load($file) {
+
+        $router = new static;
+        require $file;
+        return $router;
+    }
+
+
+    public function get($uri, $controller) {
+
+        $this->routes['GET'][$uri] = $controller;
+    }
+
+    public function post($uri, $controller) {
+
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+    public function direct($uri, $requestType) {
+
+        if (array_key_exists($uri, $this->routes[$requestType])) {
+
+            return $this->callAction(
+                ...explode('@', $this->routes[$requestType][$uri])
+            );
+        }
+
+        throw new \Exception("There is no routes for this URI {$uri}");
+    }
+    protected function callAction($controller, $action) {
+
+        $controller = "App\\Controllers\\{$controller}";
+
+        if (!class_exists($controller)) {
+
+            throw new \Exception("The class {$controller } doesn't not exist!");
+        }
+
+        $controller = new $controller;
+
+        $name = get_class($controller);
+
+        if (!method_exists($controller, $action)) {
+
+            throw new \Exception("{$name} doesn't not respond to {$action} Method!");
+        }
+
+        return $controller->$action();
+    }
+}
