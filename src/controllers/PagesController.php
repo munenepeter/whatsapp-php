@@ -3,20 +3,21 @@
 namespace App\Controllers;
 
 class PagesController{
-    public function index()
-    {
+    public function index(){
         if (isset($_SESSION['loggedIN'])) {
             # code...
             return view('index');
         }
         # code...
-        return redirect('ChatList');
+        
+        return redirect('chat');
     }
 
-    public function ChatList()
-    {
+    public function Chat(){
         
-        return view('ChatList');
+        return view('chat', [
+            'name' => 'Abzed'
+        ]);
     }
 
 
