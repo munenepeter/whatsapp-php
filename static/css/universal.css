@@ -16,29 +16,109 @@
 /* First Navbar */
 
 .first-nav{
-    border: 1px solid rgb(190, 186, 186);
     border-radius: 5px;
-    width: 90%;
+    width: 100%;
 }
-
 .avatar{
     cursor: pointer;
 }
 
 .left-icons{
     width: 100%;
-    margin-left: 51%;
+    margin-left: 57%;
 }
 
 .left-icons i{
     font-size: 24px;
-    margin-top: 8%;
-    padding-left: 7%;
+    margin-top: 6%;
+    /* padding-left: 7%; */
     cursor: pointer;
 }
 
-/* .status{
-    margin-left: 17%;
-} */
-
 /* End of First Navbar */
+
+/* Second Navbar */
+
+.chat-head{
+    /* color: #e9edef; */
+    font-size: 16px;
+}
+
+.info .chat-info{
+    color: #8696A0;
+    margin-top: -5%;
+}
+
+.chat-info{
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.options i{
+    font-size: 24px;
+    margin-top: -17%;
+    cursor: pointer;
+}
+
+/* End of Second Navbar */
+
+/* Search */
+
+.input-icons i {
+    position: absolute;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+.input-field {
+    width: 90%;
+    text-align: center;
+    border-radius: 8px !important;
+}
+
+/* End of Search */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

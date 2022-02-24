@@ -12,3 +12,7 @@
 </div>
 <!-- Background image -->
 
+<?php
+http_response_code(404, 500, 501);
+include('error.php'); // provide your own HTML for the error page
+die();
